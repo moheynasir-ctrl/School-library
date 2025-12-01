@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>المكتبة المدرسية - نسخة تعليمية</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>المكتبة المدرسية</h1>
+    <p class="subtitle">نسخة تعليمية تجريبية ببيانات وهمية لأغراض التعلم فقط</p>
+  </header>
+
+  <section class="controls">
+    <div class="control">
+      <label for="q">بحث</label>
+      <input id="q" type="search" placeholder="ابحث بعنوان الكتاب أو اسم المؤلف..." />
+    </div>
+    <div class="control">
+      <label for="level">المرحلة</label>
+      <select id="level">
+        <option value="">الكل</option>
+        <option value="أساسي">أساسي</option>
+        <option value="ثانوي">ثانوي</option>
+      </select>
+    </div>
+    <div class="control">
+      <label for="subject">التخصص</label>
+      <select id="subject">
+        <option value="">الكل</option>
+        <option value="رياضيات">رياضيات</option>
+        <option value="علوم">علوم</option>
+        <option value="لغة عربية">لغة عربية</option>
+        <option value="لغة إنجليزية">لغة إنجليزية</option>
+        <option value="تاريخ">تاريخ</option>
+      </select>
+    </div>
+    <div class="control">
+      <label for="format">صيغة</label>
+      <select id="format">
+        <option value="">الكل</option>
+        <option value="PDF">PDF</option>
+        <option value="EPUB">EPUB</option>
+      </select>
+    </div>
+    <button id="clear">مسح الفلاتر</button>
+  </section>
+
+  <main id="results" class="grid"></main>
+
+  <footer class="footer">
+    <p>© نسخة تعليمية تجريبية. هذه البيانات وهمية وغير تجارية.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

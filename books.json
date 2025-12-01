@@ -1,0 +1,57 @@
+[
+  {
+    "title": "أساسيات الرياضيات للصف الأول",
+    "author": "أ. أحمد علي",
+    "level": "أساسي",
+    "grade": "الأول",
+    "subject": "رياضيات",
+    "year": 2022,
+    "format": "PDF",
+    "url": "https://example.com/fake/math-grade1.pdf",
+    "note": "بيانات وهمية لأغراض تعليمية فقط."
+  },
+  {
+    "title": "مدخل إلى العلوم الطبيعية",
+    "author": "د. منى صالح",
+    "level": "أساسي",
+    "grade": "الثالث",
+    "subject": "علوم",
+    "year": 2021,
+    "format": "PDF",
+    "url": "https://example.com/fake/science-basics.pdf",
+    "note": "نسخة تدريبية غير حقيقية."
+  },
+  {
+    "title": "مهارات اللغة العربية",
+    "author": "أ. سارة محمد",
+    "level": "ثانوي",
+    "grade": "الأول",
+    "subject": "لغة عربية",
+    "year": 2023,
+    "format": "EPUB",
+    "url": "https://example.com/fake/arabic-skills.epub",
+    "note": "محتوى تجريبي لأغراض العرض."
+  },
+  {
+    "title": "English Starter Level",
+    "author": "Mr. James",
+    "level": "ثانوي",
+    "grade": "الثاني",
+    "subject": "لغة إنجليزية",
+    "year": 2020,
+    "format": "PDF",
+    "url": "https://example.com/fake/english-starter.pdf",
+    "note": "Demo content for learning."
+  },
+  {
+    "title": "تاريخ السودان الحديث",
+    "author": "د. خالد عمر",
+    "level": "ثانوي",
+    "grade": "الثالث",
+    "subject": "تاريخ",
+    "year": 2019,
+    "format": "PDF",
+    "url": "https://example.com/fake/sudan-history.pdf",
+    "note": "بيانات عينات لأغراض توضيحية."
+  }
+]
