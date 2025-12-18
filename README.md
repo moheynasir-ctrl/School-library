@@ -16,4 +16,5 @@
 ##
 
 ## 📜 الترخيص
-MIT licnese2025©
+MIT licnese ©2025
+moheynasir-ctrl
