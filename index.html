@@ -1,58 +1,127 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>المكتبة المدرسية - نسخة تعليمية</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>بوابة مدرسة النهضه الجديده</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="header">
-    <h1>المكتبة المدرسية</h1>
-    <p class="subtitle">نسخة تعليمية تجريبية ببيانات وهمية لأغراض التعلم فقط</p>
+<body dir="rtl" class="rtl">
+  <header>
+    <div class="brand">
+      <img id="school-logo" src="logo-192.svg" alt="شعار المدرسة" width="48" height="48">
+      <h1>مدرسة النهضه الجديده</h1>
+    </div>
+    <nav>
+      <button id="tab-ann">الإعلانات</button>
+      <button id="tab-classes">الصفوف</button>
+      <button id="tab-teachers">المعلمين</button>
+      <button id="tab-attend">الحضور</button>
+      <button id="tab-homework">الواجبات</button>
+      <button id="tab-admin">لوحة الإدارة</button>
+    </nav>
   </header>
 
-  <section class="controls">
-    <div class="control">
-      <label for="q">بحث</label>
-      <input id="q" type="search" placeholder="ابحث بعنوان الكتاب أو اسم المؤلف..." />
-    </div>
-    <div class="control">
-      <label for="level">المرحلة</label>
-      <select id="level">
-        <option value="">الكل</option>
-        <option value="أساسي">أساسي</option>
-        <option value="ثانوي">ثانوي</option>
-      </select>
-    </div>
-    <div class="control">
-      <label for="subject">التخصص</label>
-      <select id="subject">
-        <option value="">الكل</option>
-        <option value="رياضيات">رياضيات</option>
-        <option value="علوم">علوم</option>
-        <option value="لغة عربية">لغة عربية</option>
-        <option value="لغة إنجليزية">لغة إنجليزية</option>
-        <option value="تاريخ">تاريخ</option>
-      </select>
-    </div>
-    <div class="control">
-      <label for="format">صيغة</label>
-      <select id="format">
-        <option value="">الكل</option>
-        <option value="PDF">PDF</option>
-        <option value="EPUB">EPUB</option>
-      </select>
-    </div>
-    <button id="clear">مسح الفلاتر</button>
-  </section>
+  <main id="app">
+    <section id="announcements" class="tab">
+      <div class="toolbar">
+        <input id="search" placeholder="بحث..." />
+        <button id="refresh">تحديث</button>
+      </div>
+      <h2>الإعلانات</h2>
+      <ul id="ann-list"></ul>
+    </section>
 
-  <main id="results" class="grid"></main>
+    <section id="classes" class="tab" hidden>
+      <h2>الصفوف</h2>
+      <ul id="class-list"></ul>
+    </section>
 
-  <footer class="footer">
-    <p>© نسخة تعليمية تجريبية. هذه البيانات وهمية وغير تجارية.</p>
-  </footer>
+    <section id="teachers" class="tab" hidden>
+      <h2>المعلمين</h2>
+      <ul id="teacher-list"></ul>
+    </section>
 
-  <script src="script.js"></script>
+    <section id="attendance" class="tab" hidden>
+      <h2>تسجيل الحضور</h2>
+      <form id="att-form">
+        <label>اسم الطالب<input id="att-name" required></label>
+        <label>الحالة
+          <select id="att-status">
+            <option>حاضر</option>
+            <option>غائب</option>
+            <option>متأخر</option>
+          </select>
+        </label>
+        <button type="submit">سجل</button>
+      </form>
+      <ul id="att-log"></ul>
+    </section>
+
+    <section id="homework" class="tab" hidden>
+      <h2>تسليم الواجبات</h2>
+      <form id="hw-form">
+        <label>عنوان الواجب<input id="hw-title" required></label>
+        <label>اسم الطالب<input id="hw-student" required></label>
+        <label>الملف <input id="hw-file" type="file" required></label>
+        <button type="submit">أرسل الواجب</button>
+      </form>
+      <ul id="hw-list"></ul>
+    </section>
+
+    <section id="admin" class="tab" hidden>
+      <h2>لوحة الإدارة</h2>
+      <div id="admin-auth">
+        <label>البريد الإلكتروني<input id="admin-email" type="email" value="moheynasir@gmail.com"></label>
+        <label>كلمة المرور<input id="admin-pass" type="password"></label>
+        <button id="admin-login">تسجيل دخول</button>
+        <button id="admin-logout" hidden>تسجيل خروج</button>
+      </div>
+
+      <div id="admin-actions" hidden>
+        <h3>إضافة إعلان</h3>
+        <form id="add-ann-form">
+          <input id="ann-title" placeholder="العنوان" required>
+          <textarea id="ann-body" placeholder="النص" required></textarea>
+          <button type="submit">أضف إعلان</button>
+        </form>
+
+        <h3>إضافة صف</h3>
+        <form id="add-class-form">
+          <input id="class-name" placeholder="اسم الصف" required>
+          <input id="class-teacher" placeholder="اسم المدرس" required>
+          <button type="submit">أضف صف</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Firebase compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+
+  <script>
+    // استبدل القيم هنا بقيم مشروع Firebase لديك
+    const firebaseConfig = {
+      apiKey: "REPLACE_WITH_YOUR_API_KEY",
+      authDomain: "REPLACE_WITH_YOUR_AUTH_DOMAIN",
+      projectId: "REPLACE_WITH_YOUR_PROJECT_ID",
+      storageBucket: "REPLACE_WITH_YOUR_STORAGE_BUCKET",
+      messagingSenderId: "REPLACE_WITH_YOUR_MESSAGING_SENDER_ID",
+      appId: "REPLACE_WITH_YOUR_APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="app.js"></script>
+  <script>
+    // تسجيل service worker بسيط (يحسن تجربة PWA)
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('sw.js').catch(()=>{/* ignore */});
+    }
+  </script>
 </body>
 </html>
