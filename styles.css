@@ -1,0 +1,26 @@
+:root{
+  --bg:#fff;
+  --card:#fff;
+  --accent:#c1121f; /* أحمر قوي */
+  --dark:#0b0b0b;   /* أسود */
+  --muted:#666;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,Segoe UI,Arial; background:var(--bg); margin:0; color:var(--dark); line-height:1.4}
+header{background:linear-gradient(90deg,var(--dark),var(--accent)); color:#fff; padding:12px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand h1{margin:0;font-size:1.1rem}
+nav{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+nav button{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.18);padding:6px 10px;border-radius:6px;cursor:pointer}
+main{padding:12px}
+.tab{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 1px 6px rgba(0,0,0,.08);margin-bottom:12px}
+.toolbar{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+input[type="text"],input[type="email"],input,textarea,select{width:100%;padding:8px;border:1px solid #ddd;border-radius:6px}
+button{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+ul{list-style:none;padding:0;margin:0}
+li{padding:10px;border-bottom:1px solid #eee}
+.rtl{direction:rtl}
+#att-log li,#hw-list li{font-size:0.95rem}
+@media(min-width:800px){
+  main{max-width:900px;margin:12px auto}
+}
